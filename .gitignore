@@ -1,0 +1,48 @@
+﻿## Generic Blacklist
+#======================
+# Các file tạm và thư mục build của .NET (Bắt buộc phải ignore)
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ex]itCode/
+
+# Thư mục chứa gói thư viện NuGet tải về độc lập
+packages/
+*.nuget.props
+*.nuget.targets
+
+## IDE - JetBrains Rider (Ignore các cấu hình cá nhân của Rider)
+#======================
+.idea/
+*.sln.iml
+_ReSharper.*/
+*.dtb
+*.dtb.html
+*.DotSettings.user
+
+## IDE - Visual Studio (Phòng trường hợp mở bằng VS)
+#======================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Operating System Logs & Cache (File rác của Windows / Mac)
+#======================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## User-specific configurations (Các file config chứa mật khẩu cá nhân - nếu có)
+#======================
+*.user
+appsettings.Development.local.json
