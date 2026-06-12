@@ -1,8 +1,22 @@
+using WebApplication1;
+using WebApplication1.Model;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.ReadConfig();
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+var config =  builder.Configuration.GetSection("AppUrl");
+var appUrl = config.Value;
+if (!string.IsNullOrEmpty(appUrl))
+{
+    builder.WebHost.UseUrls(appUrl);
+}
+
+builder.Services.AddControllers();
+builder.Services.Configure<ConfigOptions>(builder.Configuration);
 
 var app = builder.Build();
 
@@ -33,8 +47,8 @@ app.MapGet("/weatherforecast", () =>
     })
     .WithName("GetWeatherForecast");
 
+app.MapControllers();
 app.Run();
-
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);

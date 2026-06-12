@@ -7,7 +7,9 @@
       "launchBrowser": false,
       "applicationUrl": "http://localhost:5183",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Staging",
+        "AppUrl": "http://localhost:8086",
+        "CustomPrefix_AppUrl": "http://localhost:8087"
       }
     },
     "https": {
