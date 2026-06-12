@@ -46,3 +46,4 @@ $RECYCLE.BIN/
 #======================
 *.user
 appsettings.Development.local.json
+/bin/
